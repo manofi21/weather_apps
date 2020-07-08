@@ -16,12 +16,6 @@ class RouteGenerator {
               builder: (_) => DailyWeather(weatherData: args));
         }
         return _errorRoute();
-      // case '/timeMechine' :
-      //   if (args is TimeMechineModel) {
-      //     return MaterialPageRoute(
-      //         builder: (_) => ColumnWidgetTimeMechine(timeMechine: args));
-      //   }
-      //   return _errorRoute();
       default:
         return _errorRoute();
     }

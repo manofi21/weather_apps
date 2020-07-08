@@ -1,8 +1,6 @@
 import 'package:geolocator/geolocator.dart';
 import 'package:http/http.dart' as http;
 import 'package:new_weathe_sapp/model/model.dart';
-import 'package:permission_handler/permission_handler.dart';
-import 'package:location_permissions/src/permission_enums.dart' as enums;
 
 String getWeatherData(String coordinat) {
   return "https://api.darksky.net/forecast/7a3a30979a60318eca99f6c43f746ad3/${coordinat}?exclude=flags&units=si";
@@ -56,27 +54,6 @@ Future<String> getLocations() async {
       _locationData.latitude, _locationData.longitude);
   return placemark[0].locality;
 }
-
-// Future<String> checkStatusLocations() async {
-//   GeolocationStatus geolocationStatus = await Geolocator()
-//       .checkGeolocationPermissionStatus(
-//           locationPermission: GeolocationPermission.locationWhenInUse);
-//   PermissionStatus status = await Permission.locationWhenInUse.status;
-//   enums.PermissionStatus _status = enums.PermissionStatus.granted;
-//   GeolocationStatus _geolocationStatus = fromPermissionStatus(_status);
-//   bool boolStatus = (_status.toString() == status.toString()) ||
-//       (geolocationStatus.toString() == _geolocationStatus.toString());
-//   if (boolStatus) {
-//     Map<Permission, PermissionStatus> statues =
-//         await [Permission.location].request();
-//     print(statues[Permission.location]);
-//     return getLocations();
-//   } else if (!boolStatus) {
-//     Map<Permission, PermissionStatus> statues =
-//         await [Permission.location].request();
-//     checkStatusLocations();
-//   }
-// }
 
 Future<List<Currently>> getCurrentsListAPI() async {
   WeatherData weatherData = await getWeatherDataAPI();

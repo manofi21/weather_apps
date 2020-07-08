@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:new_weathe_sapp/model/model.dart';
 import 'package:new_weathe_sapp/service/addMethod.dart';
 import 'package:new_weathe_sapp/service/bloc/bloc.dart';
 import 'package:new_weathe_sapp/view/widget/widget.dart';
